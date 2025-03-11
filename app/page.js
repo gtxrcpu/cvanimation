@@ -205,7 +205,7 @@ const HomeSection = () => {
                 darkMode ? "text-yellow-400" : "text-gray-900"
               }`}
             >
-              Hi! I'm Solihin.
+              Hi! Im Bentar Ramadhan.
             </h1>
             <h2
               className={`text-4xl font-bold mb-4 ${
@@ -363,7 +363,7 @@ const HomeSection = () => {
               darkMode ? "text-gray-200" : "text-gray-700"
             } mb-8 text-xl`}
           >
-            Here are some of the projects I've worked on:
+            Here are some of the projects I&apos;ve worked on:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projectsData.map((project) => (
