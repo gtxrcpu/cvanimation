@@ -13,7 +13,8 @@ import {
   FaJava,
   FaPhp,
   FaPython,
-} from "react-icons/fa"; // Ikon untuk teknologinya
+} from "react-icons/fa";
+import Image from "next/image"; // Mengimpor komponen Image dari Next.js
 import { motion } from "framer-motion"; // Animasi
 
 const HomeSection = () => {
@@ -43,27 +44,27 @@ const HomeSection = () => {
       title: "Flappy Bird Game",
       description:
         "A classic Flappy Bird game implemented using Python and Pygame. Navigate the bird through the pipes to achieve the highest score.",
-      link: "https://your-flappy-bird-project-url.com", // Ganti dengan URL proyek Anda
-      image: "project2.jpg", // Ganti dengan URL gambar proyek Anda
+      link: "https://your-flappy-bird-project-url.com",
+      image: "/project1.jpg", // Ganti dengan URL gambar proyek Anda
       tags: ["PYTHON", "GAME DEVELOPMENT", "Pygame"],
     },
     {
       title: "GreenVision",
       description:
         "A managerial optimization web application designed to enhance productivity and collaboration within teams.",
-      link: "https://your-greenvision-project-url.com", // Ganti dengan URL proyek Anda
-      image: "project1.jpg", // Ganti dengan URL gambar proyek Anda
+      link: "https://your-greenvision-project-url.com",
+      image: "/project2.jpg", // Ganti dengan URL gambar proyek Anda
       tags: ["REACT", "WEB DEVELOPMENT", "TAILWIND"],
     },
   ];
 
   // Toggle dark/light mode
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("bg-gray-900", darkMode);
-    document.body.classList.toggle("bg-white", !darkMode);
-    document.body.classList.toggle("text-white", darkMode);
-    document.body.classList.toggle("text-gray-900", !darkMode);
+    setDarkMode((prevMode) => !prevMode);
+    document.body.classList.toggle("bg-gray-900", !darkMode);
+    document.body.classList.toggle("bg-white", darkMode);
+    document.body.classList.toggle("text-white", !darkMode);
+    document.body.classList.toggle("text-gray-900", darkMode);
   };
 
   // Mengatur highlight navbar saat scroll
@@ -237,7 +238,7 @@ const HomeSection = () => {
                 Download CV
               </a>
               <a
-                href="https://github.com/your-profile"
+                href="https://github.com/gtxrcpu/cvanimation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700"
@@ -248,7 +249,7 @@ const HomeSection = () => {
           </div>
           <motion.div className="w-1/2 flex items-center justify-center">
             <motion.img
-              src="profil.jpg"
+              src="/profil.jpg"
               alt="Profile"
               className="w-auto h-auto object-cover max-w-[80%] max-h-[70%]"
               whileHover={{ scale: 1.1 }}
@@ -365,11 +366,10 @@ const HomeSection = () => {
             Here are some of the projects I've worked on:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Proyek Pertama */}
-            {projectsData.map((project, index) => (
+            {projectsData.map((project) => (
               <motion.div
                 key={project.title}
-                className={`flex flex-col md:flex-row p-6 rounded-lg shadow-lg ${
+                className={`flex p-6 rounded-lg shadow-lg ${
                   darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
                 } transition-transform duration-500`}
                 initial={{ opacity: 0 }}
@@ -401,13 +401,15 @@ const HomeSection = () => {
                 </div>
                 {/* Gambar Proyek di Kanan */}
                 <motion.div
-                  className="w-full md:w-1/2 h-96 flex items-center justify-center"
+                  className="w-full md:w-1/2 h-48 flex items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={500}
+                    height={500}
                     className="h-full w-full object-cover rounded-lg"
                   />
                 </motion.div>
@@ -435,10 +437,10 @@ const HomeSection = () => {
           <p className={`${darkMode ? "text-gray-300" : "text-gray-600"} mb-4`}>
             Please contact me directly at{" "}
             <a
-              href="mailto:incyberz@yahoo.com"
+              href="mailto:bentarramadhan123.com"
               className="text-blue-500 underline"
             >
-              incyberz@yahoo.com
+              bentarramadhan123@gmail.com
             </a>{" "}
             or through this form.
           </p>
